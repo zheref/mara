@@ -7,6 +7,7 @@ import unittest
 import mlx.core as mx
 import mlx.nn as nn
 from mlx.utils import tree_flatten
+
 from mlx_lm import utils
 
 HF_MODEL_PATH = "mlx-community/Qwen1.5-0.5B-Chat-4bit"

@@ -6,8 +6,9 @@ import tempfile
 import types
 import unittest
 
-from mlx_lm.tuner import datasets
 from transformers import AutoTokenizer
+
+from mlx_lm.tuner import datasets
 
 HF_MODEL_PATH = "mlx-community/Qwen1.5-0.5B-Chat-4bit"
 

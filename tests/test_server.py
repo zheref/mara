@@ -6,6 +6,7 @@ import threading
 import unittest
 
 import requests
+
 from mlx_lm.server import APIHandler
 from mlx_lm.utils import load
 

@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 
 import mlx.nn as nn
+
 from mlx_lm.models.qwen2 import Model as Qwen2Model
 from mlx_lm.utils import get_model_path, load_model
 

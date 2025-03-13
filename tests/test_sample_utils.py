@@ -1,6 +1,7 @@
 import unittest
 
 import mlx.core as mx
+
 from mlx_lm.sample_utils import apply_min_p, apply_top_k, apply_top_p
 
 

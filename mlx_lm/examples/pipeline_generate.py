@@ -24,6 +24,7 @@ from pathlib import Path
 import mlx.core as mx
 from huggingface_hub import snapshot_download
 from mlx.utils import tree_flatten
+
 from mlx_lm import load, stream_generate
 from mlx_lm.utils import load_model, load_tokenizer
 

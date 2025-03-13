@@ -6,6 +6,7 @@ import tempfile
 import unittest
 
 import mlx.core as mx
+
 from mlx_lm.models.cache import (
     KVCache,
     MambaCache,

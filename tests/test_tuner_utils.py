@@ -6,6 +6,7 @@ from io import StringIO
 from unittest.mock import MagicMock
 
 import mlx.nn as nn
+
 from mlx_lm.tuner.lora import LoRALinear
 from mlx_lm.tuner.utils import print_trainable_parameters
 

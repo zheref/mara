@@ -6,6 +6,7 @@ from typing import Any, Optional
 
 import mlx.core as mx
 import mlx.nn as nn
+
 from mlx_lm.models.base import BaseModelArgs, create_attention_mask
 
 from .cache import KVCache, MambaCache

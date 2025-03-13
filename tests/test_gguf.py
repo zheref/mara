@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 import mlx.core as mx
+
 from mlx_lm.gguf import convert_to_gguf
 
 

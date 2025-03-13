@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from huggingface_hub import snapshot_download
+
 from mlx_lm.tokenizer_utils import (
     BPEStreamingDetokenizer,
     NaiveStreamingDetokenizer,
