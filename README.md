@@ -1,4 +1,17 @@
-## Generate Text with LLMs and MLX
+## MLX LM 
+
+MLX LM is a Python package for generating text and fine-tuning large language
+models on Apple silicon with MLX.
+
+Some key features include:
+
+* Integration with the Hugging Face Hub to easily use thousands of LLMs with a
+  single command. 
+* Support for quantizing and uploading models to the Hugging Face Hub.
+* [Low-rank and full model
+  fine-tuning](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LORA.md)
+  with support for quantized models.
+* Distributed inference and fine-tuning with `mx.distributed`
 
 The easiest way to get started is to install the `mlx-lm` package:
 
@@ -14,18 +27,12 @@ pip install mlx-lm
 conda install -c conda-forge mlx-lm
 ```
 
-The `mlx-lm` package also has:
-
-- [LoRA, QLoRA, and full fine-tuning](https://github.com/ml-explore/mlx-examples/blob/main/llms/mlx_lm/LORA.md)
-- [Merging models](https://github.com/ml-explore/mlx-examples/blob/main/llms/mlx_lm/MERGE.md)
-- [HTTP model serving](https://github.com/ml-explore/mlx-examples/blob/main/llms/mlx_lm/SERVER.md)
-
 ### Quick Start
 
 To generate text with an LLM use:
 
 ```bash
-mlx_lm.generate --prompt "Hi!"
+mlx_lm.generate --prompt "How tall is Mt Everest?"
 ```
 
 To chat with an LLM use:
@@ -71,7 +78,7 @@ To see a description of all the arguments you can do:
 ```
 
 Check out the [generation
-example](https://github.com/ml-explore/mlx-examples/tree/main/llms/mlx_lm/examples/generate_response.py)
+example](https://github.com/ml-explore/mlx-lm/tree/main/mlx_lm/examples/generate_response.py)
 to see how to use the API in more detail.
 
 The `mlx-lm` package also comes with functionality to quantize and optionally
@@ -216,14 +223,14 @@ not be supplied explicitly.
 Prompt caching can also be used in the Python API in order to to avoid
 recomputing the prompt. This is useful in multi-turn dialogues or across
 requests that use the same context. See the
-[example](https://github.com/ml-explore/mlx-examples/blob/main/llms/mlx_lm/examples/chat.py)
+[example](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/examples/chat.py)
 for more usage details.
 
 ### Supported Models
 
 `mlx-lm` supports thousands of Hugging Face format LLMs. If the model you want to
 run is not supported, file an
-[issue](https://github.com/ml-explore/mlx-examples/issues/new) or better yet,
+[issue](https://github.com/ml-explore/mlx-lm/issues/new) or better yet,
 submit a pull request.
 
 Here are a few examples of Hugging Face models that work with this example:

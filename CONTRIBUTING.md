@@ -1,11 +1,54 @@
 # Contributing to MLX LM 
 
+We want to make contributing to this project as easy and transparent as
+possible.
+
+## Pull Requests
+
+1. Fork and submit pull requests to the repo. 
+2. If you've added code that should be tested, add tests.
+3. Every PR should have passing tests and at least one review. 
+4. For code formatting install `pre-commit` using something like `pip install pre-commit` and run `pre-commit install`.
+   This should install hooks for running `black` and `clang-format` to ensure
+   consistent style for C++ and python code.
+ 
+   You can also run the formatters manually as follows on individual files:
+ 
+     ```bash
+     clang-format -i file.cpp
+     ```
+ 
+     ```bash
+     black file.py
+     ```
+
+     or,
+
+     ```bash
+     # single file
+     pre-commit run --files file1.py 
+
+     # specific files
+     pre-commit run --files file1.py file2.py
+     ```
+ 
+   or run `pre-commit run --all-files` to check all files in the repo.
+
+## Issues
+
+We use GitHub issues to track public bugs. Please ensure your description is
+clear and has sufficient instructions to be able to reproduce the issue.
+
+## License
+
+By contributing to mlx-lm, you agree that your contributions will be licensed
+under the LICENSE file in the root directory of this source tree.
+
+## Adding New Models
+
 Below are some tips to port LLMs available on Hugging Face to MLX.
 
-Before starting checkout the [general contribution
-guidelines](https://github.com/ml-explore/mlx-examples/blob/main/CONTRIBUTING.md).
-
-Next, from this directory, do an editable install:
+From this directory, do an editable install:
 
 ```shell
 pip install -e .
@@ -17,7 +60,7 @@ Then check if the model has weights in the
 convert it.
 
 After that, add the model file to the
-[`mlx_lm/models`](https://github.com/ml-explore/mlx-examples/tree/main/llms/mlx_lm/models)
+[`mlx_lm/models`](https://github.com/ml-explore/mlx-lm/tree/main/mlx_lm/models)
 directory. You can see other examples there. We recommend starting from a model
 that is similar to the model you are porting.
 
@@ -35,12 +78,12 @@ To determine the model layer names, we suggest either:
   in the Hugging Face repo.
 
 To add LoRA support edit
-[`mlx_lm/tuner/utils.py`](https://github.com/ml-explore/mlx-examples/blob/main/llms/mlx_lm/tuner/utils.py#L27-L60)
+[`mlx_lm/tuner/utils.py`](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/tuner/utils.py#L27-L60)
 
 Finally, add a test for the new modle type to the [model
-tests](https://github.com/ml-explore/mlx-examples/blob/main/llms/tests/test_models.py).
+tests](https://github.com/ml-explore/mlx-lm/blob/main/tests/test_models.py).
 
-From the `llms/` directory, you can run the tests with:
+You can run the tests with:
 
 ```shell
 python -m unittest discover tests/

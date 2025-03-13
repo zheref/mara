@@ -21,7 +21,7 @@ setup(
     readme="README.md",
     author_email="mlx@group.apple.com",
     author="MLX Contributors",
-    url="https://github.com/ml-explore/mlx-examples",
+    url="https://github.com/ml-explore/mlx-lm",
     license="MIT",
     install_requires=requirements,
     packages=["mlx_lm", "mlx_lm.models", "mlx_lm.tuner"],
