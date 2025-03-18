@@ -96,6 +96,7 @@ def linear_to_lora_layers(
         "cohere",
         "cohere2",
         "minicpm",
+        "minicpm3",
         "deepseek",
         "olmo2",
         "olmoe",
@@ -128,7 +129,7 @@ def linear_to_lora_layers(
         keys = set(["norm_attn_norm.attn.Wqkv", "ffn.router.layer"])
     elif model.model_type == "internlm2":
         keys = set(["attention.wqkv", "attention.wo"])
-    elif model.model_type == "deepseek_v2":
+    elif model.model_type == "deepseek_v2" or model.model_type == "minicpm3":
         keys = set(
             [
                 "self_attn.q_proj",
