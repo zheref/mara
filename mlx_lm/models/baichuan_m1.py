@@ -205,12 +205,13 @@ class Model(nn.Module):
         return caches
 
     def sanitize(self, weights: dict) -> dict:
-        if self.tie_word_embeddings:
-            weights.pop("lm_head.weight", None)
-        else:
-            # Pre-normalize the lm_head
+        is_quantized = "lm_head.scales" in weights
+        if not is_quantized and "lm_head.weight" in weights:
             w = weights["lm_head.weight"]
-            w = w / (mx.linalg.norm(w, axis=-1, keepdims=True) + 1e-7)
+            dtype = w.dtype
+            w = w.astype(mx.float32)
+            norm = mx.linalg.norm(w, axis=-1, keepdims=True)
+            w = (w / (norm + 1e-7)).astype(dtype)
             weights["lm_head.weight"] = w
         return weights
 
