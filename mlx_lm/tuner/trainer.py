@@ -261,7 +261,7 @@ def train(
 
             if training_callback is not None:
                 val_info = {
-                    "iteration": it,
+                    "iteration": it - 1,
                     "val_loss": val_loss,
                     "val_time": val_time,
                 }
