@@ -141,6 +141,8 @@ def process_message_content(messages):
             if len(text_fragments) != len(content):
                 raise ValueError("Only 'text' content type is supported.")
             message["content"] = "".join(text_fragments)
+        elif content is None:
+            message["content"] = ""
 
 
 @dataclass
