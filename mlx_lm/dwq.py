@@ -4,7 +4,6 @@ import argparse
 import copy
 import time
 import types
-from pathlib import Path
 
 import mlx.core as mx
 import mlx.nn as nn
@@ -13,7 +12,6 @@ import numpy as np
 from mlx.utils import tree_flatten, tree_map
 from tqdm import tqdm
 
-from mlx_lm.tokenizer_utils import TokenizerWrapper
 from mlx_lm.tuner.datasets import load_dataset
 from mlx_lm.tuner.trainer import iterate_batches
 from mlx_lm.tuner.utils import print_trainable_parameters
