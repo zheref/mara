@@ -202,6 +202,15 @@ def load_model(
             bits=quantization["bits"],
             class_predicate=class_predicate,
         )
+    elif quantization_config := config.get("quantization_config", False):
+        # Handle legacy quantization config
+        quant_method = quantization_config["quant_method"]
+        if quant_method == "bitnet":
+            from .models.bitlinear_layers import bitnet_quantize
+
+            model = bitnet_quantize(model, quantization_config)
+        else:
+            raise ValueError(f"Unsupported quantization method {quant_method}")
 
     model.load_weights(list(weights.items()), strict=strict)
 
