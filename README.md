@@ -21,6 +21,14 @@ The easiest way to get started is to install the `mlx-lm` package:
 pip install mlx-lm
 ```
 
+or cloning the repository and installing from source:
+
+```sh
+git clone git@github.com:zheref/mara.git
+cd mara
+python3 -m pip install .
+```
+
 **With `conda`**:
 
 ```sh
